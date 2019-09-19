@@ -8,6 +8,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Color.argb
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
 
     fun settingsPress(view: View) {
-        val intent = Intent(this, AlertDialog::class.java).apply {
+        val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
             .setContentTitle("A perfect time to study!")
             .setContentText("Hey, knowledge is awaiting you!")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setLights(argb(0, 255, 0, 255), 1000, 200)
             // Set the intent that will fire when the user taps the notification
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)

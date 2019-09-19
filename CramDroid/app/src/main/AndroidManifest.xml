@@ -9,8 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TaskChoiceActivity"
-                  android:parentActivityName=".MainActivity">
+        <activity
+            android:name=".StudyActivity"
+            android:parentActivityName=".TaskChoiceActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TaskChoiceActivity"/>
+        </activity>
+        <activity
+            android:name=".TaskChoiceActivity"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
